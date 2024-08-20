@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "serve host",
+        "type": "shell",
+        "command": "npm start",
+        "options": {
+            "cwd": "${workspaceFolder}/angular-mfe-example/projects/host"
+        },
+        "problemMatcher": []
+    },
+    {
+        "label": "serve remoteapp1",
+        "type": "shell",
+        "command": "npm start",
+        "options": {
+            "cwd": "${workspaceFolder}/remoteapp1"
+        },
+        "problemMatcher": []
+    },
+    {
+        "label": "serve remoteapp2",
+        "type": "shell",
+        "command": "npm start",
+        "options": {
+            "cwd": "${workspaceFolder}/remoteapp2"
+        },
+        "problemMatcher": []
+    },
+    {
+        "label": "serve all",
+        "dependsOn": [
+            "serve host",
+            "serve remoteapp1",
+            "serve remoteapp2"
+        ],
+        "problemMatcher": [
+            "$tsc-watch"
+        ],
+        "isBackground": true
+    }
+]
+}

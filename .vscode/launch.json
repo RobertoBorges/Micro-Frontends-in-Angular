@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Host",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/angular-mfe-example/projects/host",
+      "preLaunchTask": "serve host"
+    },
+    {
+      "name": "Debug Remoteapp1",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5000",
+      "webRoot": "${workspaceFolder}/remoteapp1",
+      "preLaunchTask": "serve remoteapp1"
+    },
+    {
+      "name": "Debug Remoteapp2",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5001",
+      "webRoot": "${workspaceFolder}/remoteapp2",
+      "preLaunchTask": "serve remoteapp2"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug All",
+      "configurations": ["Debug Host", "Debug Remoteapp1", "Debug Remoteapp2"]
+    }
+  ]
+}
