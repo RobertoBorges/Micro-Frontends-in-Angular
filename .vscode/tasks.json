@@ -2,43 +2,76 @@
   "version": "2.0.0",
   "tasks": [
     {
-        "label": "serve host",
-        "type": "shell",
-        "command": "npm start",
-        "options": {
-            "cwd": "${workspaceFolder}/angular-mfe-example/projects/host"
-        },
-        "problemMatcher": []
-    },
-    {
-        "label": "serve remoteapp1",
-        "type": "shell",
-        "command": "npm start",
-        "options": {
-            "cwd": "${workspaceFolder}/remoteapp1"
-        },
-        "problemMatcher": []
-    },
-    {
-        "label": "serve remoteapp2",
-        "type": "shell",
-        "command": "npm start",
-        "options": {
-            "cwd": "${workspaceFolder}/remoteapp2"
-        },
-        "problemMatcher": []
-    },
-    {
-        "label": "serve all",
-        "dependsOn": [
-            "serve host",
-            "serve remoteapp1",
-            "serve remoteapp2"
+      "label": "start-host",
+      "type": "npm",
+      "script": "start",
+      "path": "angular-mfe-example/projects/host",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
         ],
-        "problemMatcher": [
-            "$tsc-watch"
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "Compiled successfully."
+        }
+      }
+    },
+    {
+      "label": "start-remoteapp1",
+      "type": "npm",
+      "script": "start",
+      "path": "remoteapp1",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
         ],
-        "isBackground": true
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "Compiled successfully."
+        }
+      }
+    },
+    {
+      "label": "start-remoteapp2",
+      "type": "npm",
+      "script": "start",
+      "path": "remoteapp2",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "Compiled successfully."
+        }
+      }
     }
-]
+  ]
 }
