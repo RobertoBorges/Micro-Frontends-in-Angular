@@ -2,6 +2,38 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "install-angular-mfe-example",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/angular-mfe-example"
+      }
+    },
+    {
+      "label": "install-remoteapp1",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/remoteapp1"
+      }
+    },
+    {
+      "label": "install-remoteapp2",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/remoteapp2"
+      }
+    },
+    {
+      "label": "install-all",
+      "dependsOn": [
+        "install-angular-mfe-example",
+        "install-remoteapp1",
+        "install-remoteapp2"
+      ]
+    },
+    {
       "label": "start-host",
       "type": "npm",
       "script": "start",
@@ -88,12 +120,7 @@
         "start-host",
         "start-remoteapp1",
         "start-remoteapp2"
-      ],
-      "dependsOrder": "sequence",
-      "problemMatcher": [
-        "$tsc-watch"
-      ],
-      "isBackground": true
+      ]
     }
   ]
 }
