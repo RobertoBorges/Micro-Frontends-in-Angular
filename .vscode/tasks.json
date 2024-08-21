@@ -5,11 +5,14 @@
       "label": "start-host",
       "type": "npm",
       "script": "start",
-      "path": "angular-mfe-example/projects/host",
+      "path": "angular-mfe-example",
       "isBackground": true,
       "problemMatcher": {
         "owner": "custom",
-        "fileLocation": ["relative", "${workspaceFolder}"],
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
         "pattern": [
           {
             "regexp": ".",
@@ -33,7 +36,10 @@
       "isBackground": true,
       "problemMatcher": {
         "owner": "custom",
-        "fileLocation": ["relative", "${workspaceFolder}"],
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
         "pattern": [
           {
             "regexp": ".",
@@ -57,7 +63,10 @@
       "isBackground": true,
       "problemMatcher": {
         "owner": "custom",
-        "fileLocation": ["relative", "${workspaceFolder}"],
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
         "pattern": [
           {
             "regexp": ".",
@@ -72,6 +81,19 @@
           "endsPattern": "Compiled successfully."
         }
       }
+    },
+    {
+      "label": "start-all",
+      "dependsOn": [
+        "start-host",
+        "start-remoteapp1",
+        "start-remoteapp2"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [
+        "$tsc-watch"
+      ],
+      "isBackground": true
     }
   ]
 }
