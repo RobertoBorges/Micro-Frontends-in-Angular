@@ -1,4 +1,57 @@
-<h1>ANGULAR MFE EXAMPLE BY GURUNADH</h1>
-<a routerLink="/mfe1">REMOTE 1</a> &nbsp;
-<a routerLink="/mfe2">REMOTE 2</a>
-<router-outlet></router-outlet>
+<style>
+  :host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  .banner {
+    width: 100%;
+    background-color: #497cb3;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .menu {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .main {
+    display: flex;
+    flex: 1;
+  }
+  .content {
+    flex: 1;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+</style>
+
+<div class="banner">
+  Welcome to the Host Application!
+</div>
+<div class="main">
+  <div class="menu">
+    <a routerLink="/mfe1">Microfrontend App 1</a>
+    <a routerLink="/mfe2">Microfrontend App 2</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
