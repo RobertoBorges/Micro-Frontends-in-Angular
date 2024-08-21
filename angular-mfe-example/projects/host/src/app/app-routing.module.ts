@@ -1,7 +1,8 @@
 import { AdminComponent } from './admin/admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+// import { ProfileComponent } from './profile/profile.component';
+import { MsalGuard } from '@azure/msal-angular';
 const routes: Routes = [
   {
     path: '',
@@ -17,6 +18,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('remoteapp2/homeModule').then((module) => module.HomeModule),
   },
+  // { path: 'profile', component: ProfileComponent, canActivate: [MsalGuard] }
 ];
 
 @NgModule({
